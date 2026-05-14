@@ -1,0 +1,15 @@
+[Unit]
+Description=cursor_mobile Telegram bot
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/cursor_mobile
+EnvironmentFile=/home/ubuntu/cursor_mobile/.env
+ExecStart=/usr/bin/node dist/index.js
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
